@@ -20,8 +20,9 @@ LLM families with documented provenance and reasonably balanced classes.
 
 ## Current status
 
-Project scaffold only. No dataset has been collected and no experiments have
-been run. Configuration values are initial choices, not tuned results.
+Dataset download and preparation tools are implemented for a balanced
+ChatGLM/MPT/Flan-T5 subset of MixInstruct. No classifiers have been trained.
+Configuration values are initial choices, not tuned results.
 
 ## Planned evaluation
 
@@ -52,9 +53,19 @@ py -m venv .venv
 .\.venv\Scripts\python.exe scripts/check_environment.py
 ```
 
-Install the appropriate PyTorch build for the available hardware before training.
-The default training dependency file is `requirements-training.txt`. A CUDA
-installation command will be documented once the training hardware is confirmed.
+Verified local setup: Windows 11, Python 3.14.4, NVIDIA RTX 4070 SUPER,
+PyTorch 2.9.1+cu128. GPU forward computation and backpropagation passed.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install "torch==2.9.1" --index-url https://download.pytorch.org/whl/cu128
+.\.venv\Scripts\python.exe scripts/download_dataset.py
+.\.venv\Scripts\python.exe scripts/prepare_dataset.py
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+See `data/README.md` for provenance, source filters, labels, and split policy.
+The scripts produce 18,000 records under the default settings, with all responses
+to a prompt kept in the same split. Raw and processed text remain local.
 Record resolved dependency versions with the actual experiment results.
 
 ## Reproducibility

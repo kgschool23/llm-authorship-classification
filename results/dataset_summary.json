@@ -1,0 +1,126 @@
+{
+  "seed": 42,
+  "selected_models": {
+    "chatglm-6b": "ChatGLM",
+    "mpt-7b-instruct": "MPT",
+    "flan-t5-xxl": "Flan-T5"
+  },
+  "eligible_prompts": 7370,
+  "selected_prompts": 6000,
+  "exclusions": {
+    "source_not_allowlisted": 2402,
+    "email_or_ssn_pattern": 21,
+    "duplicate_normalized_prompt": 207
+  },
+  "upstream_model_inventory": {
+    "alpaca-native": 10000,
+    "llama-7b-hf-baize-lora-bf16": 10000,
+    "koala-7B-HF": 10000,
+    "stablelm-tuned-alpha-7b": 10000,
+    "oasst-sft-4-pythia-12b-epoch-3.5": 10000,
+    "dolly-v2-12b": 10000,
+    "flan-t5-xxl": 10000,
+    "vicuna-13b-1.1": 10000,
+    "moss-moon-003-sft": 10000,
+    "chatglm-6b": 10000,
+    "mpt-7b": 10000,
+    "mpt-7b-instruct": 10000
+  },
+  "upstream_source_counts": {
+    "unified_chip2": 6872,
+    "itwgpt4": 2108,
+    "dolly_15k": 726,
+    "sharegpt": 283,
+    "laion": 11
+  },
+  "allowed_sources": [
+    "dolly_15k",
+    "unified_chip2"
+  ],
+  "selected_source_prompt_counts": {
+    "dolly_15k": 599,
+    "unified_chip2": 5401
+  },
+  "split_policy": "Pooled upstream val/test; new 70/15/15 prompt-group split",
+  "domain_policy": "Ordered keyword heuristic: coding, math, writing, other; approximate annotations",
+  "prompt_only_accuracy_ceiling": 0.3333333333333333,
+  "splits": {
+    "train": {
+      "prompts": 4200,
+      "rows": 12600,
+      "family_counts": {
+        "ChatGLM": 4200,
+        "MPT": 4200,
+        "Flan-T5": 4200
+      },
+      "domain_prompt_counts": {
+        "other": 4117,
+        "coding": 56,
+        "writing": 16,
+        "math": 11
+      },
+      "sha256": "e12151aaa04f30fbfe33e914773e0046b1d9b4a81970433ece657b2e2a69466c"
+    },
+    "validation": {
+      "prompts": 900,
+      "rows": 2700,
+      "family_counts": {
+        "Flan-T5": 900,
+        "MPT": 900,
+        "ChatGLM": 900
+      },
+      "domain_prompt_counts": {
+        "other": 888,
+        "coding": 7,
+        "math": 3,
+        "writing": 2
+      },
+      "sha256": "e3dd4f9d4b5b8130a371305d6574c6742c8b143a6e7147e5ffdf51167245cf46"
+    },
+    "test": {
+      "prompts": 900,
+      "rows": 2700,
+      "family_counts": {
+        "ChatGLM": 900,
+        "Flan-T5": 900,
+        "MPT": 900
+      },
+      "domain_prompt_counts": {
+        "other": 880,
+        "math": 1,
+        "coding": 12,
+        "writing": 7
+      },
+      "sha256": "47d032219429234dae476420faceb7b311023f8d15e555f9ca4969ce0bd6fe0f"
+    }
+  },
+  "shared_normalized_response_strings": {
+    "train_validation": 25,
+    "train_test": 20,
+    "validation_test": 11
+  },
+  "download": {
+    "dataset": "llm-blender/mix-instruct",
+    "revision": "c7f77a4ef0515a99d1752c6387c22366d6922da6",
+    "files": [
+      {
+        "filename": "val_data_prepared.jsonl",
+        "url": "https://huggingface.co/datasets/llm-blender/mix-instruct/resolve/c7f77a4ef0515a99d1752c6387c22366d6922da6/val_data_prepared.jsonl",
+        "bytes": 68703243,
+        "sha256": "2114785a88bbd31fd8f7416ed131949cf5b054bcd70041bc4aae1e5c63931b7f"
+      },
+      {
+        "filename": "test_data_prepared.jsonl",
+        "url": "https://huggingface.co/datasets/llm-blender/mix-instruct/resolve/c7f77a4ef0515a99d1752c6387c22366d6922da6/test_data_prepared.jsonl",
+        "bytes": 86348473,
+        "sha256": "eda4a320757876a37dfcecb21ec9a53a55bd4e3ad620216c3c777f5b542dfc78"
+      },
+      {
+        "filename": "README.md",
+        "url": "https://huggingface.co/datasets/llm-blender/mix-instruct/resolve/c7f77a4ef0515a99d1752c6387c22366d6922da6/README.md",
+        "bytes": 15115,
+        "sha256": "66094b80cdf578923f7571f1899ba075fd2397cb135603f1bd4ead8a2e1a1d64"
+      }
+    ]
+  }
+}

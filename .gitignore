@@ -25,3 +25,7 @@ wandb/
 # Raw data stays local until redistribution permission is verified
 /data/raw/*
 !/data/raw/.gitkeep
+
+# Recreate text datasets with scripts; do not redistribute upstream text
+/data/processed/*
+!/data/processed/.gitkeep
