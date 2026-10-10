@@ -1,0 +1,10 @@
+{
+  "split": "test",
+  "rows": 2700,
+  "device": "cuda",
+  "checkpoint_epoch": 2,
+  "checkpoint_sha256": "58d6e5b23214109dd05573190d5dbf100b83770aa63c6705050dc5be7a41ce43",
+  "dataset_sha256": "47d032219429234dae476420faceb7b311023f8d15e555f9ca4969ce0bd6fe0f",
+  "vocabulary_refitted": false,
+  "weights_updated": false
+}

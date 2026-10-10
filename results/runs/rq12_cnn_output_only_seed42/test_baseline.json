@@ -1,0 +1,64 @@
+{
+  "predicted_family": "ChatGLM",
+  "uniform_random_expected_accuracy": 0.3333333333333333,
+  "metrics": {
+    "samples": 2700,
+    "label_order": [
+      "ChatGLM",
+      "Flan-T5",
+      "MPT"
+    ],
+    "accuracy": 0.3333333333333333,
+    "macro_f1": 0.16666666666666666,
+    "confusion_matrix": [
+      [
+        900,
+        0,
+        0
+      ],
+      [
+        900,
+        0,
+        0
+      ],
+      [
+        900,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "ChatGLM": {
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1-score": 0.5,
+        "support": 900.0
+      },
+      "Flan-T5": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 900.0
+      },
+      "MPT": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 900.0
+      },
+      "accuracy": 0.3333333333333333,
+      "macro avg": {
+        "precision": 0.1111111111111111,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.16666666666666666,
+        "support": 2700.0
+      },
+      "weighted avg": {
+        "precision": 0.1111111111111111,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.16666666666666666,
+        "support": 2700.0
+      }
+    }
+  }
+}

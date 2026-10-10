@@ -21,6 +21,13 @@ from src.training import (epoch_pass, metrics_for, save_predictions, seed_everyt
                           select_prompt_groups, sha256_file, write_json)
 
 
+def source_checksum(manifest, relative):
+    """Read checksum keys written with either Windows or POSIX separators."""
+    checksums = {key.replace("\\", "/"): value
+                 for key, value in manifest["source_sha256"].items()}
+    return checksums[relative]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run-dir", type=Path, required=True)
@@ -40,7 +47,7 @@ def main():
         if sha256_file(run_dir/f"{name}.json") != manifest[f"{name}_sha256"]:
             raise ValueError(f"Saved {name} changed after training")
     for relative in ("src/models.py", "src/text.py", "src/data.py"):
-        if sha256_file(ROOT/relative) != manifest["source_sha256"][relative]:
+        if sha256_file(ROOT/relative) != source_checksum(manifest, relative):
             raise ValueError(f"Model/preprocessing code changed: {relative}")
     config = json.loads((run_dir/"config.json").read_text(encoding="utf-8"))
     seed_everything(config["seed"])

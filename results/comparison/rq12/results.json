@@ -1,0 +1,884 @@
+{
+  "rows": [
+    {
+      "architecture": "cnn",
+      "input_mode": "input_only",
+      "seed": 42,
+      "train_samples": 12600,
+      "validation_samples": 2700,
+      "test_samples": 2700,
+      "best_epoch": 5,
+      "epochs_run": 8,
+      "parameters": 1129475,
+      "training_seconds": 30.762419000035152,
+      "validation_accuracy": 0.3333333333333333,
+      "validation_macro_f1": 0.3235829756303413,
+      "test_accuracy": 0.3333333333333333,
+      "test_macro_f1": 0.3272966158872199
+    },
+    {
+      "architecture": "cnn",
+      "input_mode": "output_only",
+      "seed": 42,
+      "train_samples": 12600,
+      "validation_samples": 2700,
+      "test_samples": 2700,
+      "best_epoch": 14,
+      "epochs_run": 17,
+      "parameters": 2758147,
+      "training_seconds": 65.67967039998621,
+      "validation_accuracy": 0.9725925925925926,
+      "validation_macro_f1": 0.9726668846994403,
+      "test_accuracy": 0.9603703703703703,
+      "test_macro_f1": 0.9605425799739965
+    },
+    {
+      "architecture": "cnn",
+      "input_mode": "input_output",
+      "seed": 42,
+      "train_samples": 12600,
+      "validation_samples": 2700,
+      "test_samples": 2700,
+      "best_epoch": 2,
+      "epochs_run": 5,
+      "parameters": 2758147,
+      "training_seconds": 23.917599700042047,
+      "validation_accuracy": 0.9651851851851851,
+      "validation_macro_f1": 0.9651287045122526,
+      "test_accuracy": 0.9585185185185185,
+      "test_macro_f1": 0.958444959081404
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "input_only",
+      "seed": 42,
+      "train_samples": 12600,
+      "validation_samples": 2700,
+      "test_samples": 2700,
+      "best_epoch": 2,
+      "epochs_run": 5,
+      "parameters": 1196291,
+      "training_seconds": 38.75836259999778,
+      "validation_accuracy": 0.3333333333333333,
+      "validation_macro_f1": 0.3135669675181111,
+      "test_accuracy": 0.3333333333333333,
+      "test_macro_f1": 0.3147564829039488
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "output_only",
+      "seed": 42,
+      "train_samples": 12600,
+      "validation_samples": 2700,
+      "test_samples": 2700,
+      "best_epoch": 6,
+      "epochs_run": 9,
+      "parameters": 2824963,
+      "training_seconds": 185.07728189998306,
+      "validation_accuracy": 0.9714814814814815,
+      "validation_macro_f1": 0.9714735569392277,
+      "test_accuracy": 0.9592592592592593,
+      "test_macro_f1": 0.9593622165050549
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "input_output",
+      "seed": 42,
+      "train_samples": 12600,
+      "validation_samples": 2700,
+      "test_samples": 2700,
+      "best_epoch": 8,
+      "epochs_run": 11,
+      "parameters": 2824963,
+      "training_seconds": 245.8340136000188,
+      "validation_accuracy": 0.9766666666666667,
+      "validation_macro_f1": 0.9766916024352413,
+      "test_accuracy": 0.9766666666666667,
+      "test_macro_f1": 0.9766592910612832
+    }
+  ],
+  "prompt_deltas": [
+    {
+      "architecture": "cnn",
+      "input_output_minus_output_only_accuracy_pp": -0.18518518518517713,
+      "input_output_minus_output_only_macro_f1": -0.0020976208925924666
+    },
+    {
+      "architecture": "lstm",
+      "input_output_minus_output_only_accuracy_pp": 1.7407407407407427,
+      "input_output_minus_output_only_macro_f1": 0.01729707455622831
+    }
+  ],
+  "details": [
+    {
+      "architecture": "cnn",
+      "input_mode": "input_only",
+      "test_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.3333333333333333,
+        "macro_f1": 0.3272966158872199,
+        "confusion_matrix": [
+          [
+            400,
+            296,
+            204
+          ],
+          [
+            400,
+            296,
+            204
+          ],
+          [
+            400,
+            296,
+            204
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.3333333333333333,
+            "recall": 0.4444444444444444,
+            "f1-score": 0.38095238095238093,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3288888888888889,
+            "f1-score": 0.33109619686800895,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.3333333333333333,
+            "recall": 0.22666666666666666,
+            "f1-score": 0.2698412698412698,
+            "support": 900.0
+          },
+          "accuracy": 0.3333333333333333,
+          "macro avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3272966158872199,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3272966158872199,
+            "support": 2700.0
+          }
+        },
+        "loss": 1.1026306145279496
+      },
+      "validation_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.3333333333333333,
+        "macro_f1": 0.3235829756303413,
+        "confusion_matrix": [
+          [
+            431,
+            287,
+            182
+          ],
+          [
+            431,
+            287,
+            182
+          ],
+          [
+            431,
+            287,
+            182
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.3333333333333333,
+            "recall": 0.47888888888888886,
+            "f1-score": 0.39306885544915643,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3188888888888889,
+            "f1-score": 0.3259511641113004,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.3333333333333333,
+            "recall": 0.20222222222222222,
+            "f1-score": 0.2517289073305671,
+            "support": 900.0
+          },
+          "accuracy": 0.3333333333333333,
+          "macro avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3235829756303413,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3235829756303413,
+            "support": 2700.0
+          }
+        },
+        "loss": 1.1027212058173286
+      },
+      "run_directory": "C:\\Coding Projects\\CMPSC448\\Midterm Project\\results\\runs\\rq12_cnn_input_only_seed42"
+    },
+    {
+      "architecture": "cnn",
+      "input_mode": "output_only",
+      "test_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9603703703703703,
+        "macro_f1": 0.9605425799739965,
+        "confusion_matrix": [
+          [
+            863,
+            32,
+            5
+          ],
+          [
+            28,
+            872,
+            0
+          ],
+          [
+            38,
+            4,
+            858
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9289558665231432,
+            "recall": 0.9588888888888889,
+            "f1-score": 0.9436850738108256,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.960352422907489,
+            "recall": 0.9688888888888889,
+            "f1-score": 0.9646017699115044,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.9942062572421785,
+            "recall": 0.9533333333333334,
+            "f1-score": 0.9733408961996597,
+            "support": 900.0
+          },
+          "accuracy": 0.9603703703703703,
+          "macro avg": {
+            "precision": 0.9611715155576035,
+            "recall": 0.9603703703703704,
+            "f1-score": 0.9605425799739965,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9611715155576035,
+            "recall": 0.9603703703703703,
+            "f1-score": 0.9605425799739965,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.26370797533567786
+      },
+      "validation_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9725925925925926,
+        "macro_f1": 0.9726668846994403,
+        "confusion_matrix": [
+          [
+            872,
+            23,
+            5
+          ],
+          [
+            25,
+            875,
+            0
+          ],
+          [
+            19,
+            2,
+            879
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9519650655021834,
+            "recall": 0.9688888888888889,
+            "f1-score": 0.960352422907489,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.9722222222222222,
+            "recall": 0.9722222222222222,
+            "f1-score": 0.9722222222222222,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.994343891402715,
+            "recall": 0.9766666666666667,
+            "f1-score": 0.9854260089686099,
+            "support": 900.0
+          },
+          "accuracy": 0.9725925925925926,
+          "macro avg": {
+            "precision": 0.9728437263757068,
+            "recall": 0.9725925925925926,
+            "f1-score": 0.9726668846994403,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9728437263757068,
+            "recall": 0.9725925925925926,
+            "f1-score": 0.9726668846994404,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.1792236002619568
+      },
+      "run_directory": "C:\\Coding Projects\\CMPSC448\\Midterm Project\\results\\runs\\rq12_cnn_output_only_seed42"
+    },
+    {
+      "architecture": "cnn",
+      "input_mode": "input_output",
+      "test_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9585185185185185,
+        "macro_f1": 0.958444959081404,
+        "confusion_matrix": [
+          [
+            839,
+            43,
+            18
+          ],
+          [
+            32,
+            864,
+            4
+          ],
+          [
+            15,
+            0,
+            885
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9469525959367946,
+            "recall": 0.9322222222222222,
+            "f1-score": 0.9395296752519597,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.9525909592061742,
+            "recall": 0.96,
+            "f1-score": 0.9562811289429994,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.9757442116868799,
+            "recall": 0.9833333333333333,
+            "f1-score": 0.9795240730492529,
+            "support": 900.0
+          },
+          "accuracy": 0.9585185185185185,
+          "macro avg": {
+            "precision": 0.9584292556099495,
+            "recall": 0.9585185185185185,
+            "f1-score": 0.958444959081404,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9584292556099495,
+            "recall": 0.9585185185185185,
+            "f1-score": 0.958444959081404,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.12811261890938988
+      },
+      "validation_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9651851851851851,
+        "macro_f1": 0.9651287045122526,
+        "confusion_matrix": [
+          [
+            848,
+            34,
+            18
+          ],
+          [
+            26,
+            872,
+            2
+          ],
+          [
+            13,
+            1,
+            886
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9560315670800451,
+            "recall": 0.9422222222222222,
+            "f1-score": 0.949076664801343,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.9614112458654906,
+            "recall": 0.9688888888888889,
+            "f1-score": 0.9651355838406198,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.977924944812362,
+            "recall": 0.9844444444444445,
+            "f1-score": 0.9811738648947951,
+            "support": 900.0
+          },
+          "accuracy": 0.9651851851851851,
+          "macro avg": {
+            "precision": 0.9651225859192992,
+            "recall": 0.965185185185185,
+            "f1-score": 0.9651287045122526,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9651225859192992,
+            "recall": 0.9651851851851851,
+            "f1-score": 0.9651287045122525,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.11286864963118677
+      },
+      "run_directory": "C:\\Coding Projects\\CMPSC448\\Midterm Project\\results\\runs\\rq12_cnn_input_output_seed42"
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "input_only",
+      "test_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.3333333333333333,
+        "macro_f1": 0.3147564829039488,
+        "confusion_matrix": [
+          [
+            232,
+            164,
+            504
+          ],
+          [
+            232,
+            164,
+            504
+          ],
+          [
+            232,
+            164,
+            504
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.3333333333333333,
+            "recall": 0.2577777777777778,
+            "f1-score": 0.2907268170426065,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.3333333333333333,
+            "recall": 0.18222222222222223,
+            "f1-score": 0.23563218390804597,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.3333333333333333,
+            "recall": 0.56,
+            "f1-score": 0.417910447761194,
+            "support": 900.0
+          },
+          "accuracy": 0.3333333333333333,
+          "macro avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3147564829039488,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3147564829039488,
+            "support": 2700.0
+          }
+        },
+        "loss": 1.0988693774188005
+      },
+      "validation_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.3333333333333333,
+        "macro_f1": 0.3135669675181111,
+        "confusion_matrix": [
+          [
+            275,
+            137,
+            488
+          ],
+          [
+            275,
+            137,
+            488
+          ],
+          [
+            275,
+            137,
+            488
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3055555555555556,
+            "f1-score": 0.3188405797101449,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.3333333333333333,
+            "recall": 0.15222222222222223,
+            "f1-score": 0.20900076277650648,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5422222222222223,
+            "f1-score": 0.4128595600676819,
+            "support": 900.0
+          },
+          "accuracy": 0.3333333333333333,
+          "macro avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3135669675181111,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3135669675181111,
+            "support": 2700.0
+          }
+        },
+        "loss": 1.0988559707005818
+      },
+      "run_directory": "C:\\Coding Projects\\CMPSC448\\Midterm Project\\results\\runs\\rq12_lstm_input_only_seed42"
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "output_only",
+      "test_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9592592592592593,
+        "macro_f1": 0.9593622165050549,
+        "confusion_matrix": [
+          [
+            860,
+            25,
+            15
+          ],
+          [
+            50,
+            849,
+            1
+          ],
+          [
+            19,
+            0,
+            881
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9257265877287406,
+            "recall": 0.9555555555555556,
+            "f1-score": 0.9404045926735921,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.971395881006865,
+            "recall": 0.9433333333333334,
+            "f1-score": 0.9571589627959414,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.9821627647714605,
+            "recall": 0.9788888888888889,
+            "f1-score": 0.9805230940456316,
+            "support": 900.0
+          },
+          "accuracy": 0.9592592592592593,
+          "macro avg": {
+            "precision": 0.9597617445023553,
+            "recall": 0.9592592592592594,
+            "f1-score": 0.9593622165050549,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9597617445023553,
+            "recall": 0.9592592592592593,
+            "f1-score": 0.959362216505055,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.13280090413056314
+      },
+      "validation_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9714814814814815,
+        "macro_f1": 0.9714735569392277,
+        "confusion_matrix": [
+          [
+            865,
+            25,
+            10
+          ],
+          [
+            34,
+            865,
+            1
+          ],
+          [
+            7,
+            0,
+            893
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9547461368653422,
+            "recall": 0.9611111111111111,
+            "f1-score": 0.9579180509413068,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.9719101123595506,
+            "recall": 0.9611111111111111,
+            "f1-score": 0.9664804469273743,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.9878318584070797,
+            "recall": 0.9922222222222222,
+            "f1-score": 0.9900221729490022,
+            "support": 900.0
+          },
+          "accuracy": 0.9714814814814815,
+          "macro avg": {
+            "precision": 0.971496035877324,
+            "recall": 0.9714814814814815,
+            "f1-score": 0.9714735569392277,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9714960358773241,
+            "recall": 0.9714814814814815,
+            "f1-score": 0.9714735569392278,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.10377712661745371
+      },
+      "run_directory": "C:\\Coding Projects\\CMPSC448\\Midterm Project\\results\\runs\\rq12_lstm_output_only_seed42"
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "input_output",
+      "test_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9766666666666667,
+        "macro_f1": 0.9766592910612832,
+        "confusion_matrix": [
+          [
+            867,
+            22,
+            11
+          ],
+          [
+            14,
+            885,
+            1
+          ],
+          [
+            15,
+            0,
+            885
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9676339285714286,
+            "recall": 0.9633333333333334,
+            "f1-score": 0.965478841870824,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.9757442116868799,
+            "recall": 0.9833333333333333,
+            "f1-score": 0.9795240730492529,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.9866220735785953,
+            "recall": 0.9833333333333333,
+            "f1-score": 0.9849749582637729,
+            "support": 900.0
+          },
+          "accuracy": 0.9766666666666667,
+          "macro avg": {
+            "precision": 0.9766667379456346,
+            "recall": 0.9766666666666667,
+            "f1-score": 0.9766592910612832,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9766667379456346,
+            "recall": 0.9766666666666667,
+            "f1-score": 0.9766592910612832,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.10400267814596494
+      },
+      "validation_metrics": {
+        "samples": 2700,
+        "label_order": [
+          "ChatGLM",
+          "Flan-T5",
+          "MPT"
+        ],
+        "accuracy": 0.9766666666666667,
+        "macro_f1": 0.9766916024352413,
+        "confusion_matrix": [
+          [
+            870,
+            24,
+            6
+          ],
+          [
+            19,
+            881,
+            0
+          ],
+          [
+            14,
+            0,
+            886
+          ]
+        ],
+        "classification_report": {
+          "ChatGLM": {
+            "precision": 0.9634551495016611,
+            "recall": 0.9666666666666667,
+            "f1-score": 0.9650582362728786,
+            "support": 900.0
+          },
+          "Flan-T5": {
+            "precision": 0.9734806629834254,
+            "recall": 0.9788888888888889,
+            "f1-score": 0.9761772853185595,
+            "support": 900.0
+          },
+          "MPT": {
+            "precision": 0.9932735426008968,
+            "recall": 0.9844444444444445,
+            "f1-score": 0.9888392857142857,
+            "support": 900.0
+          },
+          "accuracy": 0.9766666666666667,
+          "macro avg": {
+            "precision": 0.9767364516953277,
+            "recall": 0.9766666666666666,
+            "f1-score": 0.9766916024352413,
+            "support": 2700.0
+          },
+          "weighted avg": {
+            "precision": 0.9767364516953277,
+            "recall": 0.9766666666666667,
+            "f1-score": 0.9766916024352411,
+            "support": 2700.0
+          }
+        },
+        "loss": 0.09583217385638919
+      },
+      "run_directory": "C:\\Coding Projects\\CMPSC448\\Midterm Project\\results\\runs\\rq12_lstm_input_output_seed42"
+    }
+  ],
+  "test_dataset_sha256": "47d032219429234dae476420faceb7b311023f8d15e555f9ca4969ce0bd6fe0f",
+  "notes": [
+    "",
+    "Uniform-random expected accuracy: 33.33%.",
+    "Balanced constant-class baseline: accuracy 33.33%, macro-F1 0.1667.",
+    "Prompt-only accuracy is a matched-prompt control; expected value is exactly 33.33%.",
+    "One seed was run. Differences are descriptive; no significance claim is made."
+  ]
+}

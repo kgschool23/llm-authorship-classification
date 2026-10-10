@@ -1,0 +1,9 @@
+{
+  "reason": "Normalize Windows checksum path keys before first test evaluation",
+  "old_evaluation_script_sha256": "12f6f2152c6cc0303b3e6ad9e7b4fd67428773d860d0b978dd6a8edad82e275d",
+  "new_evaluation_script_sha256": "41ee3f8dda8a6967d32b297fa9fa399e779f8aadf82694e36bd442d3dcb05508",
+  "utc": "2026-10-10T03:16:41.925865+00:00",
+  "training_sources_changed": false,
+  "datasets_changed": false,
+  "test_evaluated_before_repair": false
+}

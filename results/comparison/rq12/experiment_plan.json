@@ -1,0 +1,96 @@
+{
+  "config": {
+    "seed": 42,
+    "split": {
+      "group_by": "prompt_id",
+      "train_fraction": 0.7,
+      "validation_fraction": 0.15,
+      "test_fraction": 0.15
+    },
+    "text": {
+      "max_vocab_size": 20000,
+      "prompt_max_tokens": 96,
+      "output_max_tokens": 256,
+      "lowercase": true
+    },
+    "model": {
+      "embedding_dim": 128,
+      "dropout": 0.3,
+      "cnn": {
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ],
+        "filters_per_kernel": 128
+      },
+      "lstm": {
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "bidirectional": true
+      }
+    },
+    "training": {
+      "batch_size": 32,
+      "max_epochs": 20,
+      "learning_rate": 0.001,
+      "early_stopping_patience": 3,
+      "selection_metric": "validation_macro_f1"
+    },
+    "experiments": {
+      "architectures": [
+        "cnn",
+        "lstm"
+      ],
+      "input_modes": [
+        "input_only",
+        "output_only",
+        "input_output"
+      ]
+    }
+  },
+  "combinations": [
+    [
+      "cnn",
+      "input_only"
+    ],
+    [
+      "cnn",
+      "output_only"
+    ],
+    [
+      "cnn",
+      "input_output"
+    ],
+    [
+      "lstm",
+      "input_only"
+    ],
+    [
+      "lstm",
+      "output_only"
+    ],
+    [
+      "lstm",
+      "input_output"
+    ]
+  ],
+  "dataset_sha256": {
+    "train": "e12151aaa04f30fbfe33e914773e0046b1d9b4a81970433ece657b2e2a69466c",
+    "validation": "e3dd4f9d4b5b8130a371305d6574c6742c8b143a6e7147e5ffdf51167245cf46",
+    "test": "47d032219429234dae476420faceb7b311023f8d15e555f9ca4969ce0bd6fe0f"
+  },
+  "training_source_sha256": {
+    "scripts\\train.py": "8c34486df940910f80400200e809fc928c22489f5e787cff6f9bc30ea94f98e2",
+    "src\\__init__.py": "4c7b93bb8b1a35da2b27eb5e9a5b5fa30c1b9ba43737a9fe2e8a1319cc312213",
+    "src\\data.py": "6f63e02d17005877893ae3de51bb2efad172b885c77e8849277eb4142981301b",
+    "src\\experiments.py": "534e106e0af4dde2454fecfa36756d24539a168b8c90e19efa3510466c67efa5",
+    "src\\models.py": "2f06405e201d6e05e9ebb3a46f3fb02a0646efef227bac7e669d26728c064583",
+    "src\\plots.py": "973189c402f916e3bb93c7a9beabbf424c435f9f7311850801163d376fd51eeb",
+    "src\\text.py": "c74225c0b03814e57a2872da67a10e61fe7acada93063aac37836213bcbb3576",
+    "src\\training.py": "32e868540864fea70828d7b8f158d41337e3a2dd53c13a86f4384189438e2e94"
+  },
+  "evaluation_script_sha256": "41ee3f8dda8a6967d32b297fa9fa399e779f8aadf82694e36bd442d3dcb05508",
+  "policy": "Train all six first; select by validation macro-F1; report all six tests without retuning",
+  "run_prefix": "rq12"
+}

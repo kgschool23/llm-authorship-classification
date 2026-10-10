@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "started_at_utc": "2026-10-10T03:00:47.445927+00:00",
+  "architecture": "cnn",
+  "input_mode": "input_only",
+  "seed": 42,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "python": "3.14.4",
+  "torch": "2.9.1+cu128",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "git_revision": "6e5039286666e75d95045e6e176b705c945b08bb",
+  "source_sha256": {
+    "scripts\\train.py": "8c34486df940910f80400200e809fc928c22489f5e787cff6f9bc30ea94f98e2",
+    "src\\__init__.py": "4c7b93bb8b1a35da2b27eb5e9a5b5fa30c1b9ba43737a9fe2e8a1319cc312213",
+    "src\\data.py": "6f63e02d17005877893ae3de51bb2efad172b885c77e8849277eb4142981301b",
+    "src\\experiments.py": "534e106e0af4dde2454fecfa36756d24539a168b8c90e19efa3510466c67efa5",
+    "src\\models.py": "2f06405e201d6e05e9ebb3a46f3fb02a0646efef227bac7e669d26728c064583",
+    "src\\plots.py": "973189c402f916e3bb93c7a9beabbf424c435f9f7311850801163d376fd51eeb",
+    "src\\text.py": "c74225c0b03814e57a2872da67a10e61fe7acada93063aac37836213bcbb3576",
+    "src\\training.py": "32e868540864fea70828d7b8f158d41337e3a2dd53c13a86f4384189438e2e94"
+  },
+  "dataset_sha256": {
+    "train": "e12151aaa04f30fbfe33e914773e0046b1d9b4a81970433ece657b2e2a69466c",
+    "validation": "e3dd4f9d4b5b8130a371305d6574c6742c8b143a6e7147e5ffdf51167245cf46"
+  },
+  "parameters": 1129475,
+  "vocabulary_size": 7276,
+  "label_order": [
+    "ChatGLM",
+    "Flan-T5",
+    "MPT"
+  ],
+  "vocabulary_sha256": "1437a1d391a17f59235268ae62a8f66fb858bb2b4461b378c5c36455ee566571",
+  "config_sha256": "83fcdb4dfdf24ff2738b6377b3807f3e90b001fbdb1b89d187c2199372e99c77",
+  "optimizer": "Adam",
+  "gradient_clip_norm": 1.0,
+  "precision": "float32",
+  "deterministic_algorithms": true,
+  "subset_run": false,
+  "data_statistics": {
+    "train": {
+      "rows": 12600,
+      "prompt_groups": 4200,
+      "family_counts": {
+        "ChatGLM": 4200,
+        "MPT": 4200,
+        "Flan-T5": 4200
+      },
+      "mean_encoded_tokens": 16.090476190476192,
+      "max_encoded_tokens": 96,
+      "unknown_token_fraction": 0.0,
+      "LLM_Input_truncation_fraction": 0.0014285714285714286
+    },
+    "validation": {
+      "rows": 2700,
+      "prompt_groups": 900,
+      "family_counts": {
+        "Flan-T5": 900,
+        "MPT": 900,
+        "ChatGLM": 900
+      },
+      "mean_encoded_tokens": 15.928888888888888,
+      "max_encoded_tokens": 96,
+      "unknown_token_fraction": 0.06194196428571429,
+      "LLM_Input_truncation_fraction": 0.0011111111111111111
+    }
+  },
+  "best_epoch": 5,
+  "epochs_run": 8,
+  "elapsed_seconds": 30.762419000035152,
+  "best_validation_macro_f1": 0.3235829756303413,
+  "peak_gpu_memory_mib": 103.14111328125
+}
