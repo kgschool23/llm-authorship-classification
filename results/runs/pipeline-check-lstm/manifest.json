@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "started_at_utc": "2026-10-10T02:52:45.480131+00:00",
+  "architecture": "lstm",
+  "input_mode": "output_only",
+  "seed": 42,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "python": "3.14.4",
+  "torch": "2.9.1+cu128",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "git_revision": "b8177156f6e58beba061257fe207e6a04181fb4b",
+  "source_sha256": {
+    "scripts\\train.py": "8c34486df940910f80400200e809fc928c22489f5e787cff6f9bc30ea94f98e2",
+    "src\\__init__.py": "4c7b93bb8b1a35da2b27eb5e9a5b5fa30c1b9ba43737a9fe2e8a1319cc312213",
+    "src\\data.py": "6f63e02d17005877893ae3de51bb2efad172b885c77e8849277eb4142981301b",
+    "src\\models.py": "2f06405e201d6e05e9ebb3a46f3fb02a0646efef227bac7e669d26728c064583",
+    "src\\plots.py": "973189c402f916e3bb93c7a9beabbf424c435f9f7311850801163d376fd51eeb",
+    "src\\text.py": "c74225c0b03814e57a2872da67a10e61fe7acada93063aac37836213bcbb3576",
+    "src\\training.py": "32e868540864fea70828d7b8f158d41337e3a2dd53c13a86f4384189438e2e94"
+  },
+  "dataset_sha256": {
+    "train": "e12151aaa04f30fbfe33e914773e0046b1d9b4a81970433ece657b2e2a69466c",
+    "validation": "e3dd4f9d4b5b8130a371305d6574c6742c8b143a6e7147e5ffdf51167245cf46"
+  },
+  "parameters": 732419,
+  "vocabulary_size": 3652,
+  "label_order": [
+    "ChatGLM",
+    "Flan-T5",
+    "MPT"
+  ],
+  "vocabulary_sha256": "aae34c6dd1cd9156741eac09da0e27f5b13dc5888acceabb02994809633b710a",
+  "config_sha256": "731f6b697a5cb8a40a85434cb75438661958c40f5b93ae9d3e28eb79c89e72fd",
+  "optimizer": "Adam",
+  "gradient_clip_norm": 1.0,
+  "precision": "float32",
+  "deterministic_algorithms": true,
+  "subset_run": true,
+  "data_statistics": {
+    "train": {
+      "rows": 192,
+      "prompt_groups": 64,
+      "family_counts": {
+        "Flan-T5": 64,
+        "ChatGLM": 64,
+        "MPT": 64
+      },
+      "mean_encoded_tokens": 147.34895833333334,
+      "max_encoded_tokens": 256,
+      "unknown_token_fraction": 0.0,
+      "LLM_output_truncation_fraction": 0.03125
+    },
+    "validation": {
+      "rows": 48,
+      "prompt_groups": 16,
+      "family_counts": {
+        "Flan-T5": 16,
+        "MPT": 16,
+        "ChatGLM": 16
+      },
+      "mean_encoded_tokens": 142.10416666666666,
+      "max_encoded_tokens": 256,
+      "unknown_token_fraction": 0.14587303914382055,
+      "LLM_output_truncation_fraction": 0.041666666666666664
+    }
+  },
+  "best_epoch": 2,
+  "epochs_run": 2,
+  "elapsed_seconds": 3.665719199925661,
+  "best_validation_macro_f1": 0.5465608465608466,
+  "peak_gpu_memory_mib": 170.439453125
+}

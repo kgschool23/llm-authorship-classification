@@ -20,9 +20,9 @@ LLM families with documented provenance and reasonably balanced classes.
 
 ## Current status
 
-Dataset preparation, text preprocessing, CNN, and bidirectional LSTM are
-implemented. Model checks cover all six architecture/input combinations.
-Full training and evaluation are pending; no classification results are claimed.
+Dataset preparation, preprocessing, CNN, LSTM, training, and evaluation are
+implemented. Unit tests and short training runs verify the pipeline.
+Full experiments and final classification results are pending.
 
 ## Planned evaluation
 
@@ -85,3 +85,17 @@ will be documented in `data/README.md`.
 Read `docs/model_design.md` for the architecture, feature budgets, and padding
 policy. The smoke check fits vocabularies on training features only and performs
 one gradient step per combination; it does not evaluate validation/test data.
+
+## Training and evaluation
+
+See `docs/training_and_evaluation.md` for optimizer settings, early stopping,
+metrics, and the test protocol. A short implementation check can be run with:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/train.py --architecture cnn --input-mode output_only --device cuda --epochs 2 --max-train-prompts 128 --max-validation-prompts 32 --run-name pipeline-check-cnn
+```
+
+Training never evaluates test data. Best checkpoints are selected by validation
+macro-F1. Each run saves its settings, source checksums, vocabulary, checkpoint,
+learning curves, validation metrics, baseline, and predictions. Subset checks
+are labeled in the manifest and cannot be evaluated as final test runs.

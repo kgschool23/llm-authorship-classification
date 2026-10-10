@@ -1,0 +1,50 @@
+{
+  "seed": 42,
+  "split": {
+    "group_by": "prompt_id",
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15
+  },
+  "text": {
+    "max_vocab_size": 20000,
+    "prompt_max_tokens": 96,
+    "output_max_tokens": 256,
+    "lowercase": true
+  },
+  "model": {
+    "embedding_dim": 128,
+    "dropout": 0.3,
+    "cnn": {
+      "kernel_sizes": [
+        3,
+        4,
+        5
+      ],
+      "filters_per_kernel": 128
+    },
+    "lstm": {
+      "hidden_dim": 128,
+      "num_layers": 1,
+      "bidirectional": true
+    }
+  },
+  "training": {
+    "batch_size": 32,
+    "max_epochs": 2,
+    "learning_rate": 0.001,
+    "early_stopping_patience": 3,
+    "selection_metric": "validation_macro_f1"
+  },
+  "experiments": {
+    "architectures": [
+      "cnn",
+      "lstm"
+    ],
+    "input_modes": [
+      "input_only",
+      "output_only",
+      "input_output"
+    ]
+  }
+}
