@@ -1,0 +1,26 @@
+{
+  "test_predictions_checked": 6,
+  "training_fingerprint_rows": 12600,
+  "training_dataset_sha256": "e12151aaa04f30fbfe33e914773e0046b1d9b4a81970433ece657b2e2a69466c",
+  "test_dataset_sha256": "47d032219429234dae476420faceb7b311023f8d15e555f9ca4969ce0bd6fe0f",
+  "analysis_script_sha256": "aa6450dc968dfc3147eecf42adf2bcb6025aec6d2448530cb3a6609aace00f94",
+  "fingerprints_split": "train",
+  "models_retrained": false,
+  "new_test_inference": false,
+  "paired_prompt_changes": [
+    {
+      "architecture": "cnn",
+      "both_correct": 2540,
+      "both_wrong": 59,
+      "helped": 48,
+      "harmed": 53
+    },
+    {
+      "architecture": "lstm",
+      "both_correct": 2562,
+      "both_wrong": 35,
+      "helped": 75,
+      "harmed": 28
+    }
+  ]
+}

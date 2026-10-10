@@ -1,0 +1,3 @@
+architecture,both_correct,both_wrong,helped,harmed
+cnn,2540,59,48,53
+lstm,2562,35,75,28
