@@ -1,0 +1,61 @@
+{
+  "samples": 225,
+  "label_order": [
+    "ChatGLM",
+    "Flan-T5",
+    "MPT"
+  ],
+  "accuracy": 0.96,
+  "macro_f1": 0.9601983437599876,
+  "confusion_matrix": [
+    [
+      74,
+      1,
+      0
+    ],
+    [
+      2,
+      72,
+      1
+    ],
+    [
+      5,
+      0,
+      70
+    ]
+  ],
+  "classification_report": {
+    "ChatGLM": {
+      "precision": 0.9135802469135802,
+      "recall": 0.9866666666666667,
+      "f1-score": 0.9487179487179487,
+      "support": 75.0
+    },
+    "Flan-T5": {
+      "precision": 0.9863013698630136,
+      "recall": 0.96,
+      "f1-score": 0.972972972972973,
+      "support": 75.0
+    },
+    "MPT": {
+      "precision": 0.9859154929577465,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.958904109589041,
+      "support": 75.0
+    },
+    "accuracy": 0.96,
+    "macro avg": {
+      "precision": 0.9619323699114468,
+      "recall": 0.96,
+      "f1-score": 0.9601983437599876,
+      "support": 225.0
+    },
+    "weighted avg": {
+      "precision": 0.9619323699114468,
+      "recall": 0.96,
+      "f1-score": 0.9601983437599876,
+      "support": 225.0
+    }
+  },
+  "loss": 0.146448041895896
+}

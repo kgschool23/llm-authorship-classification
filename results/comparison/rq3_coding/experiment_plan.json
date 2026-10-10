@@ -1,0 +1,139 @@
+{
+  "held_domain": "coding",
+  "input_mode": "output_only",
+  "architectures": [
+    "cnn",
+    "lstm"
+  ],
+  "config": {
+    "seed": 42,
+    "split": {
+      "group_by": "prompt_id",
+      "train_fraction": 0.7,
+      "validation_fraction": 0.15,
+      "test_fraction": 0.15
+    },
+    "text": {
+      "max_vocab_size": 20000,
+      "prompt_max_tokens": 96,
+      "output_max_tokens": 256,
+      "lowercase": true
+    },
+    "model": {
+      "embedding_dim": 128,
+      "dropout": 0.3,
+      "cnn": {
+        "kernel_sizes": [
+          3,
+          4,
+          5
+        ],
+        "filters_per_kernel": 128
+      },
+      "lstm": {
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "bidirectional": true
+      }
+    },
+    "training": {
+      "batch_size": 32,
+      "max_epochs": 20,
+      "learning_rate": 0.001,
+      "early_stopping_patience": 3,
+      "selection_metric": "validation_macro_f1"
+    },
+    "experiments": {
+      "architectures": [
+        "cnn",
+        "lstm"
+      ],
+      "input_modes": [
+        "input_only",
+        "output_only",
+        "input_output"
+      ]
+    }
+  },
+  "original_dataset_sha256": {
+    "train": "e12151aaa04f30fbfe33e914773e0046b1d9b4a81970433ece657b2e2a69466c",
+    "validation": "e3dd4f9d4b5b8130a371305d6574c6742c8b143a6e7147e5ffdf51167245cf46",
+    "test": "47d032219429234dae476420faceb7b311023f8d15e555f9ca4969ce0bd6fe0f"
+  },
+  "dataset_sha256": {
+    "train": "f32ee10604fc35f3bc0b3909f034c557b5747e7502d242a849af9cea375e9a93",
+    "validation": "538c68404a90f89a4c82e0ee63b83b3b5ea6787a537bad36f53fe1f535a1c71c",
+    "test": "3228744eb9794480d80d1259dca73c7be323c00ab0e55e813599f04eb8fbfb17",
+    "in_domain_test": "37a5047e1f3d6488fb5b4d65d3c1f508a9e0be2442d322bc2d7d4630cd7f98ec"
+  },
+  "training_source_sha256": {
+    "scripts\\train.py": "8c34486df940910f80400200e809fc928c22489f5e787cff6f9bc30ea94f98e2",
+    "src\\__init__.py": "4c7b93bb8b1a35da2b27eb5e9a5b5fa30c1b9ba43737a9fe2e8a1319cc312213",
+    "src\\data.py": "6f63e02d17005877893ae3de51bb2efad172b885c77e8849277eb4142981301b",
+    "src\\experiments.py": "534e106e0af4dde2454fecfa36756d24539a168b8c90e19efa3510466c67efa5",
+    "src\\models.py": "2f06405e201d6e05e9ebb3a46f3fb02a0646efef227bac7e669d26728c064583",
+    "src\\plots.py": "973189c402f916e3bb93c7a9beabbf424c435f9f7311850801163d376fd51eeb",
+    "src\\text.py": "c74225c0b03814e57a2872da67a10e61fe7acada93063aac37836213bcbb3576",
+    "src\\training.py": "32e868540864fea70828d7b8f158d41337e3a2dd53c13a86f4384189438e2e94"
+  },
+  "runner_sha256": "4169d57147eb96c3d0988103af0486e37130b1a5471549d07e8887b61845b402",
+  "splits": {
+    "train": {
+      "responses": 12432,
+      "prompts": 4144,
+      "families": {
+        "ChatGLM": 4144,
+        "MPT": 4144,
+        "Flan-T5": 4144
+      },
+      "domains": {
+        "other": 12351,
+        "math": 33,
+        "writing": 48
+      }
+    },
+    "validation": {
+      "responses": 2679,
+      "prompts": 893,
+      "families": {
+        "Flan-T5": 893,
+        "MPT": 893,
+        "ChatGLM": 893
+      },
+      "domains": {
+        "other": 2664,
+        "math": 9,
+        "writing": 6
+      }
+    },
+    "test": {
+      "responses": 225,
+      "prompts": 75,
+      "families": {
+        "MPT": 75,
+        "Flan-T5": 75,
+        "ChatGLM": 75
+      },
+      "domains": {
+        "coding": 225
+      }
+    },
+    "in_domain_test": {
+      "responses": 2664,
+      "prompts": 888,
+      "families": {
+        "ChatGLM": 888,
+        "MPT": 888,
+        "Flan-T5": 888
+      },
+      "domains": {
+        "other": 2640,
+        "writing": 21,
+        "math": 3
+      }
+    }
+  },
+  "policy": "Exclude held domain from training and validation; train both models before scoring either test; no retuning",
+  "domain_labels": "Existing keyword heuristics; no human domain validation",
+  "relationship_to_rq12": "Separate models and split assignment; held-domain prompts pooled from original train/validation/test"
+}

@@ -1,0 +1,10 @@
+{
+  "dataset_sha256": "3228744eb9794480d80d1259dca73c7be323c00ab0e55e813599f04eb8fbfb17",
+  "checkpoint_sha256": "72933adc06ce33016c35bd148cc6f2d98cec48451c3554660ac10f0fcde876a6",
+  "rows": 225,
+  "prompt_groups": 75,
+  "domain_plan_sha256": "6d850581ad161ab6fe4f3e059a75069bb42381257518653875ff824654e6a619",
+  "device": "cuda",
+  "vocabulary_refitted": false,
+  "weights_updated": false
+}
