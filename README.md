@@ -20,9 +20,9 @@ LLM families with documented provenance and reasonably balanced classes.
 
 ## Current status
 
-Dataset download and preparation tools are implemented for a balanced
-ChatGLM/MPT/Flan-T5 subset of MixInstruct. No classifiers have been trained.
-Configuration values are initial choices, not tuned results.
+Dataset preparation, text preprocessing, CNN, and bidirectional LSTM are
+implemented. Model checks cover all six architecture/input combinations.
+Full training and evaluation are pending; no classification results are claimed.
 
 ## Planned evaluation
 
@@ -74,3 +74,14 @@ Initial random seed: 42. Training and evaluation commands will be added as they
 are implemented. Results and claims in the final report must come from recorded
 experiments. Data provenance, licenses, collection settings, and limitations
 will be documented in `data/README.md`.
+
+## Model verification
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe scripts/smoke_test_models.py --device cuda
+```
+
+Read `docs/model_design.md` for the architecture, feature budgets, and padding
+policy. The smoke check fits vocabularies on training features only and performs
+one gradient step per combination; it does not evaluate validation/test data.

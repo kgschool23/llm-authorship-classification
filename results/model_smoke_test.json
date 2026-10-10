@@ -1,0 +1,73 @@
+{
+  "purpose": "Forward/backward smoke checks only; not classification results",
+  "torch_version": "2.9.1+cu128",
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "checks": [
+    {
+      "architecture": "cnn",
+      "input_mode": "input_only",
+      "vocabulary_size": 7276,
+      "parameters": 1129475,
+      "batch_size": 12,
+      "batch_width": 25,
+      "loss": 1.6869330406188965,
+      "device": "cuda",
+      "status": "passed"
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "input_only",
+      "vocabulary_size": 7276,
+      "parameters": 1196291,
+      "batch_size": 12,
+      "batch_width": 25,
+      "loss": 1.0824133157730103,
+      "device": "cuda",
+      "status": "passed"
+    },
+    {
+      "architecture": "cnn",
+      "input_mode": "output_only",
+      "vocabulary_size": 20000,
+      "parameters": 2758147,
+      "batch_size": 12,
+      "batch_width": 248,
+      "loss": 1.6225318908691406,
+      "device": "cuda",
+      "status": "passed"
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "output_only",
+      "vocabulary_size": 20000,
+      "parameters": 2824963,
+      "batch_size": 12,
+      "batch_width": 248,
+      "loss": 1.117784857749939,
+      "device": "cuda",
+      "status": "passed"
+    },
+    {
+      "architecture": "cnn",
+      "input_mode": "input_output",
+      "vocabulary_size": 20000,
+      "parameters": 2758147,
+      "batch_size": 12,
+      "batch_width": 271,
+      "loss": 1.653829574584961,
+      "device": "cuda",
+      "status": "passed"
+    },
+    {
+      "architecture": "lstm",
+      "input_mode": "input_output",
+      "vocabulary_size": 20000,
+      "parameters": 2824963,
+      "batch_size": 12,
+      "batch_width": 271,
+      "loss": 1.100094199180603,
+      "device": "cuda",
+      "status": "passed"
+    }
+  ]
+}
